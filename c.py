@@ -1,3 +1,6 @@
+from beautifultable import BeautifulTable
+
+
 class conductBook :
     def __init__(self):
         self.__data={} #declare data as private variable
@@ -37,7 +40,14 @@ class conductBook :
             print("Phone number Does not exits!")
 
     def view(self):
-        pass
+        table = BeautifulTable()
+        for child_data in data:
+            table.rows.append(child_data)
+
+        table.rows.header = [str(i) for i in range(1, len(data) + 1)]
+        table.columns.header = ["name", "address", "phone_number", "email"]
+        print(table)
+
     def search(self,query=None,sortField=None):
         if query != None:
             search_arr = []
