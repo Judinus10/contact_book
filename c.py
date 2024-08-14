@@ -145,7 +145,14 @@ class conductBook :
                         sort_by = None
                     self.searchContact(query, sort_by)
 
+                if n == 5:
+                    new_data = []
+                    for key, val in self.__data.items():
+                        new_data.append(val)
+                    self.viewContact(new_data)
                 
+                if n == 6:
+                    break
 
             except Exception as e:
                 pass
