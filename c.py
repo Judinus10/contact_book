@@ -80,7 +80,13 @@ class conductBook :
             return []
 
     def console(self):
-        pass
+        while True:
+            try:
+                print("\n1. Add Contact\n2. Delete Contact\n3. Edit Contact\n4. Search Contact\n5. View Contacts\n6. Stop")
+                n = int(input("Enter your options: "))
+
+            except Exception as e:
+                pass
 
 # conductBook = conductBook()
 # conductBook.add("Rahul", "colombo", "0775648753", "jj@gmail.com")
