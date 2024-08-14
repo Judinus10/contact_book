@@ -121,6 +121,30 @@ class conductBook :
                         email = None
                     self.editContact(name, address, phone_number, email)
                 
+                if n == 3:
+                    name = input("Name: ")
+                    address = input("Address: ")
+                    phone_number = input("Phone Number: ")
+                    email = input("Email: ")
+                    if len(name) == 0:
+                        name = None
+                    if len(address) == 0:
+                        address = None
+                    if len(phone_number) == 0:
+                        phone_number = None
+                    if len(email) == 0:
+                        email = None
+                    self.editContact(name, address, phone_number, email)
+                
+                if n == 4:
+                    query = input("Search: ")
+                    sort_by = input("Sort by: ")
+                    if len(query) == 0:
+                        query = None
+                    if len(sort_by) == 0:
+                        sort_by = None
+                    self.searchContact(query, sort_by)
+
                 
 
             except Exception as e:
