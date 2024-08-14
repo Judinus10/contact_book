@@ -100,6 +100,12 @@ class conductBook :
                         email = None
                     self.addContact(name, address, phone_number, email)
 
+                if n == 2:
+                    phone_number = input("Phone Number: ")
+                    if len(phone_number) == 0:
+                        phone_number = None
+                    self.deleteContact(phone_number)
+                
                 
 
             except Exception as e:
