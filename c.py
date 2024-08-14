@@ -23,7 +23,19 @@ class conductBook :
             print("Please enter Phone number!")
 
     def edit(self,name=None,address=None,phoneNumber=None,email=None):
-        pass
+        if phoneNumber!=None and phoneNumber not in self.__data :
+            listInfo = self.__data[phoneNumber]
+            if name!=None :
+                listInfo[0] = name
+            if address!=None :
+                listInfo[1] = address 
+            if email!=None :
+                listInfo[3] = email 
+            self.__data[phoneNumber]=listInfo
+            print("Data Updated successfully!")
+        else : 
+            print("Phone number Does not exits!")
+
     def view(self):
         pass
     def search(self,query=None,sortField=None):
