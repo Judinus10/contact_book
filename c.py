@@ -1,7 +1,5 @@
-from beautifultable import BeautifulTable
 
-
-class conductBook :
+class contactBook :
     def __init__(self):
         self.__data={} #declare data as private variable
 
@@ -88,68 +86,68 @@ class conductBook :
                 if n == 1:
                     name = input("Name: ")
                     address = input("Address: ")
-                    phone_number = input("Phone Number: ")
+                    phoneNumber = input("Phone Number: ")
                     email = input("Email: ")
                     if len(name) == 0:
                         name = None
                     if len(address) == 0:
                         address = None
-                    if len(phone_number) == 0:
-                        phone_number = None
+                    if len(phoneNumber) == 0:
+                        phoneNumber = None
                     if len(email) == 0:
                         email = None
-                    self.addContact(name, address, phone_number, email)
+                    self.addContact(name, address, phoneNumber, email)
 
                 if n == 2:
-                    phone_number = input("Phone Number: ")
-                    if len(phone_number) == 0:
-                        phone_number = None
-                    self.deleteContact(phone_number)
+                    phoneNumber = input("Phone Number: ")
+                    if len(phoneNumber) == 0:
+                        phoneNumber = None
+                    self.deleteContact(phoneNumber)
                 
                 if n == 3:
                     name = input("Name: ")
                     address = input("Address: ")
-                    phone_number = input("Phone Number: ")
+                    phoneNumber = input("Phone Number: ")
                     email = input("Email: ")
                     if len(name) == 0:
                         name = None
                     if len(address) == 0:
                         address = None
-                    if len(phone_number) == 0:
-                        phone_number = None
+                    if len(phoneNumber) == 0:
+                        phoneNumber = None
                     if len(email) == 0:
                         email = None
-                    self.editContact(name, address, phone_number, email)
+                    self.editContact(name, address, phoneNumber, email)
                 
                 if n == 3:
                     name = input("Name: ")
                     address = input("Address: ")
-                    phone_number = input("Phone Number: ")
+                    phoneNumber = input("Phone Number: ")
                     email = input("Email: ")
                     if len(name) == 0:
                         name = None
                     if len(address) == 0:
                         address = None
-                    if len(phone_number) == 0:
-                        phone_number = None
+                    if len(phoneNumber) == 0:
+                        phoneNumber = None
                     if len(email) == 0:
                         email = None
-                    self.editContact(name, address, phone_number, email)
+                    self.editContact(name, address, phoneNumber, email)
                 
                 if n == 4:
                     query = input("Search: ")
-                    sort_by = input("Sort by: ")
+                    sortBy = input("Sort by: ")
                     if len(query) == 0:
                         query = None
-                    if len(sort_by) == 0:
-                        sort_by = None
-                    self.searchContact(query, sort_by)
+                    if len(sortBy) == 0:
+                        sortBy = None
+                    self.searchContact(query, sortBy)
 
                 if n == 5:
-                    new_data = []
+                    newData = []
                     for key, val in self.__data.items():
-                        new_data.append(val)
-                    self.viewContact(new_data)
+                        newData.append(val)
+                    self.viewContact(newData)
                 
                 if n == 6:
                     break
@@ -157,5 +155,5 @@ class conductBook :
             except Exception as e:
                 pass
 
-# conductBook = conductBook()
-# conductBook.add("Rahul", "colombo", "0775648753", "jj@gmail.com")
+contact_book = contactBook()
+contactBook.console()
