@@ -96,13 +96,13 @@ class contactBook :
                         phoneNumber = None
                     if len(email) == 0:
                         email = None
-                    self.addContact(name, address, phoneNumber, email)
+                    self.add(name, address, phoneNumber, email)
 
                 if n == 2:
                     phoneNumber = input("Phone Number: ")
                     if len(phoneNumber) == 0:
                         phoneNumber = None
-                    self.deleteContact(phoneNumber)
+                    self.delete(phoneNumber)
                 
                 if n == 3:
                     name = input("Name: ")
@@ -117,22 +117,7 @@ class contactBook :
                         phoneNumber = None
                     if len(email) == 0:
                         email = None
-                    self.editContact(name, address, phoneNumber, email)
-                
-                if n == 3:
-                    name = input("Name: ")
-                    address = input("Address: ")
-                    phoneNumber = input("Phone Number: ")
-                    email = input("Email: ")
-                    if len(name) == 0:
-                        name = None
-                    if len(address) == 0:
-                        address = None
-                    if len(phoneNumber) == 0:
-                        phoneNumber = None
-                    if len(email) == 0:
-                        email = None
-                    self.editContact(name, address, phoneNumber, email)
+                    self.edit(name, address, phoneNumber, email)
                 
                 if n == 4:
                     query = input("Search: ")
@@ -141,13 +126,13 @@ class contactBook :
                         query = None
                     if len(sortBy) == 0:
                         sortBy = None
-                    self.searchContact(query, sortBy)
+                    self.search(query, sortBy)
 
                 if n == 5:
                     newData = []
                     for key, val in self.__data.items():
                         newData.append(val)
-                    self.viewContact(newData)
+                    self.view(newData)
                 
                 if n == 6:
                     break
@@ -156,4 +141,4 @@ class contactBook :
                 pass
 
 contact_book = contactBook()
-contactBook.console()
+contact_book.console()
