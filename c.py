@@ -84,6 +84,23 @@ class conductBook :
             try:
                 print("\n1. Add Contact\n2. Delete Contact\n3. Edit Contact\n4. Search Contact\n5. View Contacts\n6. Stop")
                 n = int(input("Enter your options: "))
+            
+                if n == 1:
+                    name = input("Name: ")
+                    address = input("Address: ")
+                    phone_number = input("Phone Number: ")
+                    email = input("Email: ")
+                    if len(name) == 0:
+                        name = None
+                    if len(address) == 0:
+                        address = None
+                    if len(phone_number) == 0:
+                        phone_number = None
+                    if len(email) == 0:
+                        email = None
+                    self.addContact(name, address, phone_number, email)
+
+                
 
             except Exception as e:
                 pass
