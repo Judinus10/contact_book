@@ -1,11 +1,11 @@
 class conductBook :
     def __init__(self):
         pass
-    def add(self,name=None,phoneNumber=None,email=None):
+    def add(self,name=None,address=None,phoneNumber=None,email=None):
         pass
     def delete(self,phonenumber=None):
         pass
-    def edit(self,name=None,phoneNumber=None,email=None):
+    def edit(self,name=None,address=None,phoneNumber=None,email=None):
         pass
     def view(self):
         pass
