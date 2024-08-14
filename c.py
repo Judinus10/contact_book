@@ -5,7 +5,7 @@ class conductBook :
     def add(self,name=None,address=None,phoneNumber=None,email=None):
         if name!=None and address!=None and phoneNumber!=None and email!=None :
             if phoneNumber not in self.__data :
-                self.__data(phoneNumber)={name,address,phoneNumber,email}
+                self.__data[phoneNumber]={name,address,phoneNumber,email}
                 print("Contact added Successfully!")
             else :
                 print("Number already exists!")
@@ -17,7 +17,7 @@ class conductBook :
             if phoneNumber not in self.__data :
                 print("No matches found")
             else :
-                del self.__data(phoneNumber)
+                del self.__data[phoneNumber]
                 print("Contact deleted Successfully!")
         else :
             print("Please enter Phone number!")
@@ -39,6 +39,38 @@ class conductBook :
     def view(self):
         pass
     def search(self,query=None,sortField=None):
-        pass
+        if query != None:
+            search_arr = []
+            for key, val in self.__data.items():
+                search_arr.append(val + [" ".join(val)])
+                        
+            result = set()
+            for word in query.lower().split():
+                for i in range(len(search_arr)):
+                    if word in search_arr[i][-1].lower():
+                        result.add(i)
+            
+            ans = []
+            for i in result:
+                ans.append(search_arr[i][:-1])
+            
+            indx = 0
+            if sort_field == "name":
+                indx = 0
+            if sort_field == "address":
+                indx = 1
+            if sort_field == "phone_number":
+                indx = 2
+            if sort_field == "email":
+                indx = 3
+            ans.sort(key= lambda x : x[indx])
+
+            self.viewContact(ans)
+        else:
+            return []
+
     def console(self):
         pass
+
+# conductBook = conductBook()
+# conductBook.add("Rahul", "colombo", "0775648753", "jj@gmail.com")
