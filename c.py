@@ -106,6 +106,21 @@ class conductBook :
                         phone_number = None
                     self.deleteContact(phone_number)
                 
+                if n == 3:
+                    name = input("Name: ")
+                    address = input("Address: ")
+                    phone_number = input("Phone Number: ")
+                    email = input("Email: ")
+                    if len(name) == 0:
+                        name = None
+                    if len(address) == 0:
+                        address = None
+                    if len(phone_number) == 0:
+                        phone_number = None
+                    if len(email) == 0:
+                        email = None
+                    self.editContact(name, address, phone_number, email)
+                
                 
 
             except Exception as e:
